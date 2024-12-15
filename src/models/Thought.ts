@@ -3,7 +3,8 @@ import { Schema, Types, model, type Document } from 'mongoose';
 interface IThought extends Document {
     thoughtId: Schema.Types.ObjectId,
     text: string,
-    timeStamp: Date
+    timeStamp: Date,
+    createdBy: Schema.Types.ObjectId
 }
 
 const thoughtSchema = new Schema<IThought>(
@@ -21,6 +22,10 @@ const thoughtSchema = new Schema<IThought>(
         },
         timeStamp: {
             type: Date
+        },
+        createdBy: {
+            type: Schema.Types.ObjectId,
+            ref: 'user',
         }
     },
     {
