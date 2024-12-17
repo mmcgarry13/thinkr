@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Thought } from '../models/index'
+import { Thought } from '../models/index.js'
 
 export const getAllThoughts = async (_req: Request, res: Response) => {
     try {
@@ -31,10 +31,11 @@ export const getThoughtById = async (req: Request, res: Response) => {
 };
 
 export const createThought = async (req: Request, res: Response) => {
-    const { thought } = req.body;
+    const { text, createdBy } = req.body;
     try {
         const newThought = await Thought.create({
-            thought
+            text,
+            createdBy
         });
         res.status(201).json(newThought);
     } catch (error: any) {

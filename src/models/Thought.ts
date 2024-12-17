@@ -25,7 +25,7 @@ const thoughtSchema = new Schema<IThought>(
         },
         createdBy: {
             type: Schema.Types.ObjectId,
-            ref: 'user',
+            ref: 'User',
         }
     },
     {

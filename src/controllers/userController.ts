@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Thought, User } from '../models/index'
+import { Thought, User } from '../models/index.js'
 
 // Count of all Users
 export const userCount = async () => {
@@ -76,7 +76,7 @@ export const deleteUser = async (req: Request, res: Response) => {
 
         if (!thought) {
             return res.status(404).json({
-                message: 'User deleted, but they had no thoughts',
+                message: 'User deleted, but they had no thoughts 🤯',
             });
         }
 

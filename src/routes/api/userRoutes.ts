@@ -5,7 +5,7 @@ import {
     getUserById,
     createUser,
     deleteUser,
-} from '../../controllers/userController';
+} from '../../controllers/userController.js';
 
 // /api/users
 router.route('/').get(getAllUsers).post(createUser);
